@@ -1,1 +1,6 @@
 # Gort
+
+
+## Installation Instructions
+## Running 
+

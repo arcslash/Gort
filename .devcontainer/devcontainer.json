@@ -1,0 +1,14 @@
+{
+    "name": "ROS Dev Container",
+    "dockerFile": "Dockerfile",
+    "workspaceFolder": "/root/ros_ws",
+    "extensions": [
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "ms-vscode-remote.remote-containers"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "source /opt/ros/noetic/setup.bash && colcon build"
+}
