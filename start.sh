@@ -5,8 +5,6 @@ IMAGE_NAME="gort"
 CONTAINER_NAME="gort_container"
 WORKSPACE_DIR="$PWD"
 
-docker build -t $IMAGE_NAME .
-
 # Build the Docker image if it doesn't exist
 if [[ "$(docker images -q $IMAGE_NAME 2> /dev/null)" == "" ]]; then
     echo "Building the Docker image..."

@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 # Install ROS 2 Development Tools
 RUN apt-get update && apt-get install -y \
     ros-foxy-ament-cmake \
+    ros-foxy-xacro \
+    ros-foxy-joint-state-publisher-gui \
     && rm -rf /var/lib/apt/lists/*
 
 # Install colcon
