@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # Variables
-IMAGE_NAME="gort-dev"
+IMAGE_NAME="gort"
 CONTAINER_NAME="gort_container"
-WORKSPACE_DIR="$HOME/gort"
+WORKSPACE_DIR="$PWD"
+
+docker build -t $IMAGE_NAME .
 
 # Build the Docker image if it doesn't exist
 if [[ "$(docker images -q $IMAGE_NAME 2> /dev/null)" == "" ]]; then
@@ -18,10 +20,11 @@ if [[ "$(docker ps -q -f name=$CONTAINER_NAME)" != "" ]]; then
 fi
 
 # Run the Docker container
-docker run -it \
+echo "Starting Docker container '$CONTAINER_NAME'..."
+docker run --platform linux/amd64 -it \
     --rm \
     --name $CONTAINER_NAME \
-    -v "$WORKSPACE_DIR:/root/ros_ws" \
+    -v "$WORKSPACE_DIR/src:/root/ros_ws/src" \
     -p 11311:11311 \
     $IMAGE_NAME \
     bash

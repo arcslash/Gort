@@ -1,5 +1,5 @@
-# Use an official ROS image
-FROM osrf/ros:noetic-desktop-full
+# Use an official ROS 2 image
+FROM osrf/ros:foxy-desktop
 
 # Install additional tools if needed
 RUN apt-get update && apt-get install -y \
@@ -10,9 +10,17 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
+# Install ROS 2 Development Tools
+RUN apt-get update && apt-get install -y \
+    ros-foxy-ament-cmake \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install colcon
+RUN pip install -U colcon-common-extensions
+
 # Set up a workspace
 RUN mkdir -p /root/ros_ws/src
 WORKDIR /root/ros_ws
 
 # Source ROS setup automatically
-RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
