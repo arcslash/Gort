@@ -47,4 +47,5 @@ RUN sudo apt-get update && sudo apt-get install -y \
 RUN sudo apt-get update && sudo apt-get install -y \
     ros-foxy-ament-cmake \
     ros-foxy-xacro \
-    ros-foxy-joint-state-publisher-gui
+    ros-foxy-joint-state-publisher-gui \
+    ros-foxy-gazebo-ros-pkgs

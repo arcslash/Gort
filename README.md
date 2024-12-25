@@ -12,25 +12,8 @@ Why Docker?
 
 ### Requirements
 
-1. Install XQuartz on macOS
-Download and install XQuartz from xquartz.org.
-After installation, launch XQuartz.
-Go to XQuartz > Preferences > Security and check the box for:
-Allow connections from network clients. 
+Just install docker and follow setting up dev environment in a container ( This might be the easiest way to quick start a project in ROS ).
 
-2. Configure XQuartz for Networking
-Open a terminal and allow your local machine (Docker host) to connect to the X server:
-```bash
-xhost + 127.0.0.1
-```
-
-### Running Rviz
-
-```bash
-Xvfb :1 -screen 0 1024x768x16 &
-export DISPLAY=:1
-rviz2
-```
 
 
 ## Installation Instructions
@@ -56,6 +39,33 @@ ros2 launch gort_one rsp.launch.py
 
 ## Running 
 
+
+### Rviz2 Controls
+
+Open up Rviz using
+
+```bash
+rviz2
+```
+
+Wheel controls
+
+```bash
+ros2 run joint_state_publisher_gui joint_state_publisher_gui
+```
+
+
+### Run Gazebo
+
+Open up Gazebo using,
+
+```bash
+ros2 launch gazebo_ros gazebo.launch.py
+```
+
+```bash
+ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity bot_name
+```
 
 ## Credits
 Thanks Josh for template: (my_bot)[https://github.com/joshnewans/my_bot]
