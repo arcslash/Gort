@@ -63,9 +63,17 @@ Open up Gazebo using,
 ros2 launch gazebo_ros gazebo.launch.py
 ```
 
+Spawn up Gazebo and start simulation,
+
 ```bash
 ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity bot_name
 ```
 
+All in one execution module
+
+```bash
+ros2 launch gort_one launch_sim.launch.py
+```
+
 ## Credits
-Thanks Josh for template: (my_bot)[https://github.com/joshnewans/my_bot]
+Thanks Josh for template: [my_bot](https://github.com/joshnewans/my_bot)
