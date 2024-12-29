@@ -75,5 +75,11 @@ All in one execution module
 ros2 launch gort_one launch_sim.launch.py
 ```
 
+Control the robot 
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
 ## Credits
 Thanks Josh for template: [my_bot](https://github.com/joshnewans/my_bot)
