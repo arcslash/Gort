@@ -69,16 +69,32 @@ Spawn up Gazebo and start simulation,
 ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity bot_name
 ```
 
+run with the world
+
+```bash
+ros2 launch gort_one launch_sim.launch.py world:=./src/gort_one/worlds/..
+```
+
 All in one execution module
 
 ```bash
 ros2 launch gort_one launch_sim.launch.py
 ```
 
-Control the robot 
+
+#### Control the robot 
+
+Using Keyboard
 
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+Using Joystick
+
+```bash
+ros2 run teleop_twist_joy --teleop_node joy --joy_node
+
 ```
 
 ## Credits
